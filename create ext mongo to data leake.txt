@@ -1,0 +1,41 @@
+
+CREATE EXTERNAL TABLE IF NOT EXISTS Immatriculations_Mongo_EXT_Updated (
+  immatriculation STRING,
+  marque STRING,
+  nom STRING,
+  puissance INT,
+  longueur STRING,
+  nbPlaces INT,
+  nbPortes INT,
+  couleur STRING,
+  occasion STRING,
+  prix FLOAT
+)
+STORED BY 'com.mongodb.hadoop.hive.MongoStorageHandler'
+WITH SERDEPROPERTIES (
+  "mongo.columns.mapping"='{"immatriculation":"immatriculation", "marque":"marque", "nom":"nom", "puissance":"puissance", "longueur":"longueur", "nbPlaces":"nbPlaces", "nbPortes":"nbPortes", "couleur":"couleur", "occasion":"occasion", "prix":"prix"}'
+)
+TBLPROPERTIES (
+  "mongo.uri"="mongodb://127.0.0.1:27017/TPA.Immatriculations_updated"
+);
+
+
+
+
+
+
+CREATE EXTERNAL TABLE Clients12_Mongo_EXT (
+  age INT,
+  sexe STRING,
+  taux INT,
+  situationFamiliale STRING,
+  nbEnfantsAcharge INT,
+  voiture STRING,
+  immatriculation STRING
+)
+STORED BY 'com.mongodb.hadoop.hive.MongoStorageHandler'
+WITH SERDEPROPERTIES (
+    "mongo.columns.mapping" = '{ "age":"age", "sexe":"sexe", "taux":"taux", "situationFamiliale":"situationFamiliale", "nbEnfantsAcharge":"nbEnfantsAcharge", "2eme voiture":"voiture", "immatriculation":"immatriculation"}')
+TBLPROPERTIES (
+  "mongo.uri"="mongodb://127.0.0.1:27017/TPA.Clients12"
+);
