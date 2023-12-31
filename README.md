@@ -3,6 +3,7 @@
 ## Description du Projet
 
 Ce projet consiste en l'analyse de données d'une concession automobile dans le but de prédire la catégorie de véhicules la plus adaptée à ses clients. Le projet est divisé en trois étapes principales : l'identification des catégories de véhicules, la construction d'un modèle de prédiction, et l'application du modèle aux nouveaux clients.
+#### le video de la démonstration https://youtu.be/v9uxGicwtbA
 
 ## Prérequis
 
